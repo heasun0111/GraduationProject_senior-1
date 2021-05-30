@@ -100,6 +100,8 @@ import com.shatteredpixel.shatteredpixeldungeon.items.weapon.enchantments.Blocki
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.Flail;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.shatteredpixel.shatteredpixeldungeon.journal.Notes;
+//여기 추가
+import com.shatteredpixel.shatteredpixeldungeon.GetData;
 import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
 import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
 import com.shatteredpixel.shatteredpixeldungeon.levels.features.Chasm;
@@ -211,6 +213,7 @@ public class Hero extends Char {
 			HP += Math.max(HT - curHT, 0);
 		}
 		HP = Math.min(HP, HT);
+
 	}
 
 	public int STR() {
@@ -287,6 +290,8 @@ public class Hero extends Char {
 		info.heroClass = HeroClass.restoreInBundle( bundle );
 		info.subClass = HeroSubClass.restoreInBundle( bundle );
 		Belongings.preview( info, bundle );
+
+
 	}
 
 	public boolean hasTalent( Talent talent ){
@@ -492,7 +497,7 @@ public class Hero extends Char {
 			dmg = RingOfForce.damageRoll(this);
 		}
 		if (dmg < 0) dmg = 0;
-		
+
 		Berserk berserk = buff(Berserk.class);
 		if (berserk != null) dmg = berserk.damageFactor(dmg);
 		
@@ -1111,8 +1116,15 @@ public class Hero extends Char {
 			break;
 		default:
 		}
-		
+
+		//setAttackDamage 준 데미지 데이터
+		GetData getData = GetData.getInstance();
+		getData.setAttackDamage(damage);
+		getData.print();
+		//여기까지
+
 		return damage;
+
 	}
 	
 	@Override
@@ -1177,6 +1189,14 @@ public class Hero extends Char {
 		super.damage( dmg, src );
 		int postHP = HP + shielding();
 		int effectiveDamage = preHP - postHP;
+
+
+		//effectiveDamage데이터 받아오기
+		GetData getData = GetData.getInstance();
+		getData.setDamage(effectiveDamage);
+		getData.print();
+		//여기까지
+
 
 		//flash red when hit for serious damage.
 		float percentDMG = effectiveDamage / (float)preHP; //percent of current HP that was taken
@@ -1264,7 +1284,9 @@ public class Hero extends Char {
 		}
 		
 		int step = -1;
-		
+		//여기
+		int count_step = 0;
+
 		if (Dungeon.level.adjacent( pos, target )) {
 
 			path = null;
@@ -1280,7 +1302,20 @@ public class Hero extends Char {
 					return false;
 				}
 				if (Dungeon.level.passable[target] || Dungeon.level.avoid[target]) {
+					//여기 추가
+					if(step!=target){
+						count_step +=1 ;
+					}
 					step = target;
+
+					//step데이터 가져오기
+					GetData getData = GetData.getInstance();
+					getData.setMoving(count_step);
+					getData.setMovingDistance(step);
+					getData.setMovingDistanceCheck(step);
+					getData.print();
+					//여기까지
+
 				}
 				if (walkingToVisibleTrapInFog
 						&& Dungeon.level.traps.get(target) != null
@@ -1426,11 +1461,15 @@ public class Hero extends Char {
 
 		return true;
 	}
-	
+
 	public void earnExp( int exp, Class source ) {
-		
+		//getData 추가
+		GetData getData = GetData.getInstance();
+		getData.setExp(exp);
 		this.exp += exp;
 		float percent = exp/(float)maxExp();
+		getData.print();
+		//여기까지
 
 		EtherealChains.chainsRecharge chains = buff(EtherealChains.chainsRecharge.class);
 		if (chains != null) chains.gainExp(percent);
