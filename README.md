@@ -1,22 +1,15 @@
-# Shattered Pixel Dungeon
+## AI Capstone Design Project <br>
 
-A Roguelike RPG, with randomly generated levels, items, enemies, and traps! Based on the [source code of Pixel Dungeon](https://github.com/00-Evan/pixel-dungeon-gradle), by [Watabou](https://www.watabou.ru).
+본 프로젝트는 AI Capstone Design Project 과목으로 (4학년 1학기) 진행했으며,<br>
+프로젝트의 자세한 내용은 https://github.com/yunseong-github/spd-study 에서 확인할 수 있으며<br>
+오픈소스 https://github.com/00-Evan/shattered-pixel-dungeon 를 사용했습니다.<br> <br>
 
-Shattered Pixel Dungeon currently compiles for Android and desktop platforms. It is available from [GitHub](https://github.com/00-Evan/shattered-pixel-dungeon/releases), [Google Play](https://play.google.com/store/apps/details?id=com.shatteredpixel.shatteredpixeldungeon), [Amazon](https://www.amazon.com/Shattered-Pixel-Dungeon/dp/B00OH2C21M), and [F-Droid](https://f-droid.org/repository/browse/?fdid=com.shatteredpixel.shatteredpixeldungeon).
+[프로젝트 링크](https://github.com/yunseong-github/spd-study)
+[ / 오픈소스 링크](https://github.com/00-Evan/shattered-pixel-dungeon)
+<br> <br>
 
-If you like this game, please consider [supporting me on Patreon](https://www.patreon.com/ShatteredPixel)!
+🔹 **프로젝트 내용**
 
-There is an official blog for this project at [ShatteredPixel.com](http://www.shatteredpixel.com).
-
-The game also has a translation project hosted on [Transifex](https://www.transifex.com/shattered-pixel/shattered-pixel-dungeon/).
-
-Note that **this repository does not accept pull requests!** The code here is provided in hopes that others may find it useful for their own projects, not to allow community contribution. Issue reports of all kinds (bug reports, feature requests, etc.) are welcome.
-
-If you'd like to work with the code, you can find the following guides in `/docs`:
-- [Compiling for Android.](docs/getting-started-android.md)
-    - **[If you plan to distribute on Google Play please read the end of this guide.](docs/getting-started-android.md#distributing-your-apk)**
-- [Compiling for desktop platforms.](docs/getting-started-desktop.md)
-- [Recommended changes for making your own mod.](docs/recommended-changes.md)
 
 
 ![img1](./img/capstonePJ_1.png) <br> <br>
