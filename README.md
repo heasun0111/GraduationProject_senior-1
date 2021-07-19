@@ -17,3 +17,6 @@ If you'd like to work with the code, you can find the following guides in `/docs
     - **[If you plan to distribute on Google Play please read the end of this guide.](docs/getting-started-android.md#distributing-your-apk)**
 - [Compiling for desktop platforms.](docs/getting-started-desktop.md)
 - [Recommended changes for making your own mod.](docs/recommended-changes.md)
+
+
+![img1](./img/capstonePJ_1) <br> <br>
