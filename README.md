@@ -19,4 +19,4 @@ If you'd like to work with the code, you can find the following guides in `/docs
 - [Recommended changes for making your own mod.](docs/recommended-changes.md)
 
 
-![img1](./img/capstonePJ_1) <br> <br>
+![img1](./img/capstonePJ_1.png) <br> <br>
